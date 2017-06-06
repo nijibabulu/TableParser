@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		94E5BF6E1ED4C5540059D11E /* TableParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 94E5BF6C1ED4C5540059D11E /* TableParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94E5BF751ED4C5D50059D11E /* TableParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5BF741ED4C5D50059D11E /* TableParser.swift */; };
+		94E5BF771ED4C7890059D11E /* TableDialect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5BF761ED4C7890059D11E /* TableDialect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		94E5BF691ED4C5540059D11E /* TableParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TableParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E5BF6C1ED4C5540059D11E /* TableParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableParser.h; sourceTree = "<group>"; };
 		94E5BF6D1ED4C5540059D11E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94E5BF741ED4C5D50059D11E /* TableParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableParser.swift; sourceTree = "<group>"; };
+		94E5BF761ED4C7890059D11E /* TableDialect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableDialect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,8 @@
 			isa = PBXGroup;
 			children = (
 				94E5BF6C1ED4C5540059D11E /* TableParser.h */,
+				94E5BF741ED4C5D50059D11E /* TableParser.swift */,
+				94E5BF761ED4C7890059D11E /* TableDialect.swift */,
 				94E5BF6D1ED4C5540059D11E /* Info.plist */,
 			);
 			path = TableParser;
@@ -96,6 +102,7 @@
 					94E5BF681ED4C5540059D11E = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = LT335YB7M5;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -132,6 +139,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E5BF751ED4C5D50059D11E /* TableParser.swift in Sources */,
+				94E5BF771ED4C7890059D11E /* TableDialect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +251,7 @@
 		94E5BF721ED4C5540059D11E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = LT335YB7M5;
@@ -254,6 +264,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = at.ac.univie.zimmerr6.TableParser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -261,6 +272,7 @@
 		94E5BF731ED4C5540059D11E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = LT335YB7M5;
