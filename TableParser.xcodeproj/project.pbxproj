@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94D73D9D1EEF66AD0038E9B5 /* NamedColumnTableParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D73D9C1EEF66AD0038E9B5 /* NamedColumnTableParser.swift */; };
 		94E5BF6E1ED4C5540059D11E /* TableParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 94E5BF6C1ED4C5540059D11E /* TableParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94E5BF751ED4C5D50059D11E /* TableParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5BF741ED4C5D50059D11E /* TableParser.swift */; };
 		94E5BF771ED4C7890059D11E /* TableDialect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E5BF761ED4C7890059D11E /* TableDialect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		94D73D9C1EEF66AD0038E9B5 /* NamedColumnTableParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NamedColumnTableParser.swift; sourceTree = "<group>"; };
 		94E5BF691ED4C5540059D11E /* TableParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TableParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E5BF6C1ED4C5540059D11E /* TableParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableParser.h; sourceTree = "<group>"; };
 		94E5BF6D1ED4C5540059D11E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			children = (
 				94E5BF6C1ED4C5540059D11E /* TableParser.h */,
 				94E5BF741ED4C5D50059D11E /* TableParser.swift */,
+				94D73D9C1EEF66AD0038E9B5 /* NamedColumnTableParser.swift */,
 				94E5BF761ED4C7890059D11E /* TableDialect.swift */,
 				94E5BF6D1ED4C5540059D11E /* Info.plist */,
 			);
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94D73D9D1EEF66AD0038E9B5 /* NamedColumnTableParser.swift in Sources */,
 				94E5BF751ED4C5D50059D11E /* TableParser.swift in Sources */,
 				94E5BF771ED4C7890059D11E /* TableDialect.swift in Sources */,
 			);
@@ -261,9 +265,10 @@
 				INFOPLIST_FILE = TableParser/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = at.ac.univie.zimmerr6.TableParser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -284,7 +289,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = at.ac.univie.zimmerr6.TableParser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -308,6 +313,7 @@
 				94E5BF731ED4C5540059D11E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

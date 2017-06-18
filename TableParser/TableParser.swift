@@ -22,12 +22,16 @@ public class TableParser: Sequence, IteratorProtocol {
     }
     
     var _data: Array<UnicodeScalar>
-    public var dialect: TableDialect { return TableDialect() }
+    public var dialect: TableDialect { get { return _dialect } }
+    public var hasHeader: Bool { get { return _hasHeader } }
     
+    var _hasHeader: Bool
+    var _dialect: TableDialect
     var _parseState: TableParseState = .startRecord
     var _lineNumber: Int = 0
     var _field = [UnicodeScalar]()
     var _row = [String]()
+    var _header: [String]?
     var pos = 0
     
     public func makeIterator() -> TableParser {
@@ -44,7 +48,11 @@ public class TableParser: Sequence, IteratorProtocol {
             } while _parseState != .ignoreNewline && pos < _data.count
             _parseEol()
             if _parseState == .startRecord {
-                break
+                if _header != nil {
+                    _header = _row
+                } else {
+                    break
+                }
             }
         }
         //          TODO error check if we're in still a field (_field not nil)
@@ -174,11 +182,30 @@ public class TableParser: Sequence, IteratorProtocol {
     
     private func _saveField() {
         _row.append(self._field.flatMap({u in String(u)}).joined())
-        self._field = [UnicodeScalar]()
+        _field = [UnicodeScalar]()
     }
     
-    public init(with string: String, dialect: TableDialect = Dialects.excelCSV) {
-        self._data = Array(string.unicodeScalars)
+    public init(withString string: String, withDialect dialect: TableDialect = Dialects.excelCSV, hasHeader: Bool = false) {
+        _data = Array(string.unicodeScalars)
+        _hasHeader = hasHeader
+        _dialect = dialect
+    }
+    
+    public convenience init?(withData data: Data, withDialect dialect:TableDialect = Dialects.excelCSV, hasHeader: Bool = false) {
+        if let string = String(data: data,encoding: .unicode) {
+            self.init(withString: string, withDialect: dialect, hasHeader: hasHeader)
+        }
+        else {
+            return nil
+        }
+    }
+    
+    public convenience init?(withURL url: URL, withDialect dialect:TableDialect = Dialects.excelCSV, hasHeader: Bool = false) {
+        if let string = try? String(contentsOf: url) {
+            self.init(withString: string, withDialect: dialect, hasHeader: hasHeader)
+        } else {
+            return nil
+        }
     }
     //    public convenience init(withFileNamed file:String) throws {
     //        try self.init(withString: String(contentsOfFile: file))
